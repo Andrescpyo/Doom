@@ -1,7 +1,9 @@
 import pygame as pg
 from random import choice
+from carga_mapas import UtilMaps
 
 _ = False
+
 map1 = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     [1, _, _, _, _, _, _, _, _, _, _, _, _, _, _, 1],
@@ -76,7 +78,16 @@ map3 =[
     
 ]
 
-mini_map = choice([map1, map2])
+u = UtilMaps()
+u.load_maps()
+maps = u.maps
+
+#maps = [map1, map2]
+
+mini_map = maps[1] #choice(maps)
+
+print(maps[1])
+
 
 
 class Map:
